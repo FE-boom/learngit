@@ -1,0 +1,29 @@
+1.初始化git仓库：git init
+2.将文件添加至仓库：git add <fileName>
+3.将文件添加至仓库：git commit -m "message"
+4.查看仓库状态：git status
+5.查看文件更改信息：git diff <fileName>
+6.查看日志：git log
+7.查看命令历史：git reflog
+8.版本穿梭：git reset --hard commit_id
+	   HEAD表示指向当前版本，HEAD^表示前一个版本
+9.概念：工作区 -> 暂存区 -> 版本库
+10.撤销修改（回到最近一次git add/git commit的状态）：git checkout -- <fileName>    （修改的内容未git add）
+                                                   git reset HEAD <fileName>     （修改的内容已git add）
+11.在本地删除文件后：git rm <fileName>   ->   git commit -m "message"
+12.在本地误删文件后从版本库还原：git checkout -- <fileName>
+13.将本地仓库与Github同步（在该仓库目录下执行）：git remote add origin git@github.com:<github账户名/github仓库名>
+14.将本地仓库上传至远程仓库：git push origin <分支名>             （第一次上传时指令：git push -u origin master）
+15.将远程仓库克隆到本地仓库：git clone git@github.com:<github账户名/github仓库名>
+16.创建分支：git branch <分支名>
+17.切换分支：git checkout <分支名>
+18. 16及17可合并为一个指令：git checkout -b <分支名>
+19.查看当前分支状态：git branch
+20.合并指定分支到当前分支：git merge <分支名>
+21.删除分支：git branch -d <分支名>
+22.合并冲突时，需手动解决冲突才能合并。 git log --graph 用于查看分支合并图
+23.通常合并分支时，若删除分支会丢失以前分支历史信息。推荐使用指令后缀--no-ff，可保留历史信息：git merge --no-ff -m "message" <分支名> 
+24.查看远程库信息：git remote -v
+25.在本地创建和远程分支对应的分支：git checkout -b <branchName> origin/<branchName>，本地和远程分支的名称最好一致；
+26.建立本地分支和远程分支的关联：git branch --set-upstream <branchName> origin/<branchName>
+27.从远程抓取分支：git pull
